@@ -62,14 +62,18 @@ public class HomePage extends PageObject {
     }
 
     public void navigateToTenPlusEmployees() {
-        getDriver().findElement(By.linkText("10+ Employees?")).click();
+        getLinkElement("10+ Employees?").click();
     }
 
     public void getQuote() {
-        getDriver().findElement(By.linkText("Get a quote and sample pack")).click();
+        getLinkElement("Get a quote and sample pack").click();
     }
 
     public void isGetQuoteFormPresent() {
         assert getQuoteForm.isDisplayed();
+    }
+
+    private WebElement getLinkElement(String linktext){
+        return getDriver().findElement(By.linkText(linktext));
     }
 }

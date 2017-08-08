@@ -27,6 +27,9 @@ public class HomePage extends PageObject {
     @FindBy(className = "header")
     private WebElementFacade homeHeader;
 
+    @FindBy(id = "pardot-form")
+    private WebElementFacade getQuoteForm;
+
     public void isOnHomePage(){
         assert homeHeader.isCurrentlyVisible();
         assertThat(homeHeader.getText(),containsText("Sign in"));
@@ -56,5 +59,17 @@ public class HomePage extends PageObject {
 
     public void navigateToSignIn() {
         getDriver().findElement(By.linkText("Sign in")).click();
+    }
+
+    public void navigateToTenPlusEmployees() {
+        getDriver().findElement(By.linkText("10+ Employees?")).click();
+    }
+
+    public void getQuote() {
+        getDriver().findElement(By.linkText("Get a quote and sample pack")).click();
+    }
+
+    public void isGetQuoteFormPresent() {
+        assert getQuoteForm.isDisplayed();
     }
 }

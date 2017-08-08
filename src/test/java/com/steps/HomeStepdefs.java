@@ -48,6 +48,28 @@ public class HomeStepdefs implements En {
                 e.getMessage();
             }
         });
+        When("^user wants to order for ten plus employees$", () -> {
+            try {
+                homepage.navigateToTenPlusEmployees();
+            } catch (Exception e) {
+                e.getMessage();
+            }
+        });
+
+        Then("^user can get a quote$", () -> {
+            try {
+                homepage.getQuote();
+            } catch (Exception e) {
+                e.getMessage();
+            }
+        });
+        And("^user is asked for details for getting quote$", () -> {
+            try {
+                homepage.isGetQuoteFormPresent();
+            } catch (Exception e) {
+                e.getMessage();
+            }
+        });
 
 
     }

@@ -1,7 +1,7 @@
 **Pre-Conditions**
 
 - Java 8 is installed
-- chromedriver is installed
+- chromedriver binary is installed on machine
 
 **To Run the tests**
 

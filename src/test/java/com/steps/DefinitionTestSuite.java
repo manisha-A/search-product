@@ -6,5 +6,5 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features="src/test/resources/features",
-format = "pretty")
+plugin = {"pretty", "html:target/cucumber"})
 public class DefinitionTestSuite {}
